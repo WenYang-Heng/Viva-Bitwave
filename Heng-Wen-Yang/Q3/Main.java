@@ -9,7 +9,7 @@ public class Main {
 
         //check whether it is a binary number
         for (int i = 0; i < binary.length(); i++) {
-            if (binary.charAt(i) != '0' && binary.charAt(i) != '1' && binary.charAt(i) != '.') {
+            if (binary.charAt(i) != '0' && binary.charAt(i) != '1' && binary.charAt(i) != '.') { //changed from || to &&
                 System.out.println("You've entered the wrong binary format.");
                 isInputValid = false;
                 break;
