@@ -1,7 +1,9 @@
+package vivaq4;
+
 import java.util.Scanner;
 import java.util.ArrayList;
+public class VivaQ4 {
 
-public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int num;
@@ -24,25 +26,23 @@ public class Main {
             else{
                 System.out.println("\nInvalid! Please enter an integer.");
             }
-            input.nextLine();
             System.out.println();
         }while (true);
         input.close();
 
         findPrimes(num);
     }
-
+    
     public static void findPrimes(int num){
         ArrayList<Integer> list = new ArrayList<Integer>();
         System.out.printf("Prime numbers before %d:%n", num);
         boolean satisfy = false;
         for(int i = 2; i < num; i++){
             if(isPrime(i)) {
-                System.out.printf("%d ", i);
                 list.add(i);
             }
         }
-        System.out.println();
+        System.out.println(list);
         for(int i = 0; i < list.size(); i++){
             int temp = num - list.get(i);
             for(int j = i; j < list.size(); j++){
@@ -53,12 +53,8 @@ public class Main {
             }
         }
 
-        System.out.printf("The given number %d", num);
-        if(satisfy){
-            System.out.printf(" satisfies the Goldbach's Conjecture%n");
-        }
-        else{
-            System.out.printf(" does not satisfy the Goldbach's Conjecture%n");
+        if(!satisfy){
+            System.out.printf("The given number %d does not satisfy the Goldbach's Conjecture%n", num);
         }
     }
 
@@ -68,5 +64,4 @@ public class Main {
         }
         return true;
     }
-
 }
